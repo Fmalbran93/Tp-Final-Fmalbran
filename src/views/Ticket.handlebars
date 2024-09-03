@@ -1,0 +1,40 @@
+<div class="ticket-wrapper">
+    <h1 class="titles">Gracias por tu compra</h1>
+    <h3 class="subtitles">Te hemos enviado un email con los datos de tu compra.</h3>
+    <div class="item-ticket-content">
+        <div class="mb-3">
+            <strong>Email del comprador:</strong>
+        </div>
+        {{#if user}}
+        <p title="Id comprador" class="text-center">{{user.email}}</p>
+        {{/if}}
+    </div>
+
+    <div class="item-ticket-content">
+        <div class="mb-3">
+            <strong>Numero de orden de compra: </strong>
+        </div>
+        {{#each ticket}}
+        <p title="Orden de compra" class="text-center">{{code}}</p>
+        {{/each}}
+    </div>
+    <div class="item-ticket-content">
+        <div class="mb-3">
+            <strong>La compra fue realizada el: </strong>
+        </div>
+        {{#each ticket}}
+        <p title="Orden de compra" class="text-center">{{purchase_datetime}}</p>
+        {{/each}}
+    </div>
+    <div class="item-ticket-content">
+        <div class="mb-3">
+            <strong> Total de la compra: </strong>
+        </div>
+        <span class="mb-3 font-bold">$</span>
+        {{#each ticket}}
+        <p title="Orden de compra" class="text-center">{{amount}}</p>
+        {{/each}}
+    </div>
+
+    
+</div>
